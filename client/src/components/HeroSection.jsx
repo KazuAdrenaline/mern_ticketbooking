@@ -1,33 +1,62 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import { ArrowRight, CalendarIcon, ClockIcon } from 'lucide-react'
+import { ArrowRight, ClockIcon } from 'lucide-react'
+import bgImage from '../assets/demon.jpg'
 import { useNavigate } from 'react-router-dom'
 
 const HeroSection = () => {
-
-    const navigate = useNavigate()
-
+  const navigate = useNavigate()
+  
   return (
-    <div className='flex flex-col items-start justify-center gap-4 px-6 md:px-16 lg:px-36 bg-[url("/backgroundImage.png")] bg-cover bg-center h-screen'>
+    <div
+      className="relative flex flex-col items-start justify-center gap-4
+      px-6 md:px-16 lg:px-36 bg-cover bg-center h-screen"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      {/* Overlay mờ để chữ nổi bật hơn */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-      <img src={assets.marvelLogo} alt="" className="max-h-11 lg:h-11 mt-20"/>
+      {/* Nội dung */}
+      <div className="relative z-10">
+        {/* Logo */}
+        <img
+          src={assets.marvelLogo} // nếu có logo Kimetsu thì thay ở đây
+          alt="Kimetsu no Yaiba Logo"
+          className="max-h-11 lg:h-11"
+        />
 
-      <h1 className='text-5xl md:text-[70px] md:leading-18 font-semibold max-w-110'>Guardians <br /> of the Galaxy</h1>
+        {/* Tiêu đề */}
+        <h1 className="text-5xl md:text-[70px] md:leading-tight font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          Kimetsu no Yaiba <br />
+          Demon Slayer
+        </h1>
 
-      <div className='flex items-center gap-4 text-gray-300'>
-        <span>Action | Adventure | Sci-Fi</span>
-        <div className='flex items-center gap-1'>
-            <CalendarIcon className='w-4.5 h-4.5'/> 2018
+        {/* Thông tin phim */}
+        <div className="flex items-center gap-4 text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+          <span>Action | Fantasy | Adventure</span>
+          <div className="flex items-center gap-1">
+            2019
+            <ClockIcon className="w-5 h-5" /> 26 Episodes
+          </div>
         </div>
-        <div className='flex items-center gap-1'>
-            <ClockIcon className='w-4.5 h-4.5'/> 2h 8m
-        </div>
+
+        {/* Mô tả phim */}
+        <p className='max-w-md text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]'>
+          Tanjiro Kamado, a kindhearted boy who sells charcoal, finds his family 
+          slaughtered by demons. His sister Nezuko survives, but has been turned 
+          into a demon. To restore her humanity, Tanjiro joins the Demon Slayer Corps.
+        </p>
+
+        {/* Nút bấm */}
+        <button
+          onClick={() => navigate('/movies')}
+          className='flex items-center gap-1 px-6 py-3 text-sm bg-primary 
+          hover:bg-primary-dull transition rounded-full font-medium cursor-pointer text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]'
+        >
+          Explore Kimetsu
+          <ArrowRight className='w-5 h-5' />
+        </button>
       </div>
-      <p className='max-w-md text-gray-300'>In a post-apocalyptic world where cities ride on wheels and consume each other to survive, two people meet in London and try to stop a conspiracy.</p>
-      <button onClick={()=> navigate('/movies')} className='flex items-center gap-1 px-6 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer'>
-         Explore Movies
-         <ArrowRight className="w-5 h-5"/>
-      </button>
     </div>
   )
 }
