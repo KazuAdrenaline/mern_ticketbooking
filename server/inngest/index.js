@@ -165,6 +165,23 @@ const sendBookingConfirmationEmail = inngest.createFunction(
         © 2025 QuickShow Cinema. All rights reserved.
       </p>
     </div>
+<div style="text-align:center;margin-top:30px;">
+  <p style="font-size:14px;color:#555;">
+    🎫 Mã vé điện tử (Demo)
+  </p>
+
+  <img 
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FAKE-TICKET"
+    alt="QR Code Demo"
+    width="180"
+    height="180"
+    style="border:6px solid #F84565;border-radius:12px;"
+  />
+
+  <p style="font-size:12px;color:#777;margin-top:8px;">
+    (Mã minh họa – dùng cho mục đích demo)
+  </p>
+</div>
 
   </div>
 </div>
