@@ -172,14 +172,14 @@ const sendBookingConfirmationEmail = inngest.createFunction(
 
   <img 
     src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FAKE-TICKET"
-    alt="QR Code Demo"
+    alt="QR Code "
     width="180"
     height="180"
     style="border:6px solid #F84565;border-radius:12px;"
   />
 
   <p style="font-size:12px;color:#777;margin-top:8px;">
-    (Mã minh họa – dùng cho mục đích demo)
+    
   </p>
 </div>
 
