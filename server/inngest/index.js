@@ -98,7 +98,7 @@ const releaseSeatsAndDeleteBooking = inngest.createFunction(
 /* ===========================================
    📧 SEND EMAIL ALWAYS TO FIXED ADDRESS
 =========================================== */
-const RECEIVER = "nnnguyenanhkhoa@gmail.com";
+const RECEIVER = "bumcute213@gmail.com";
 
 /* ===========================================
    3️⃣ EMAIL WHEN BOOKING CREATED
